@@ -1,0 +1,72 @@
+<!doctype html>
+<html>
+<head>
+    
+    <link rel="stylesheet" href="static/css/styles.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"/>
+    <link 
+  href="http://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.3.0/css/font-awesome.css" 
+  rel="stylesheet"  type='text/css'>
+</head>
+
+<body>
+   
+  <div class="header">COMPREDICT</div>
+
+  <div class="section">
+
+    <div class="col grid_1_of_3"> 
+      
+      <div class="par">
+        <h3>WELCOME</h3> to <b>Compredict</b>. Build your personal computer here and get real time update of all
+        computer components' price!
+      </div>
+  
+      <div class="par">
+        <h3>WHAT'S YOUR BUDGET?</h3>
+        <table width="100%">
+          <td width="80%">
+          <input type="text" class="budget_input_field" placeholder="314159"/></td>
+          <td width="15%"><input type="submit" class="budget_submit" value="Build"/></td>
+        </table>
+        
+      </div>
+    </div>
+
+{% block body %}
+{% endblock body %}
+
+<div class="col grid_3_of_3"> 
+  <h3>BROWSE COMPONENTS</h3>
+  <div class="par">Processor</div>  
+  <div class="par">RAM</div>  
+  <div class="par">SSD</div>  
+  <div class="par">HDD</div>  
+  <div class="par">GPU</div>  
+  <div class="par">Motherboard</div>  
+  <div class="par">CPU Cooler</div>    
+  <div class="par">Mouse</div>  
+  <div class="par">Keyboard</div>  
+  <div class="par">Monitor</div>  
+  <div class="par">PSU</div>  
+</div>
+</div>
+
+
+  <div class="footer">
+  Computer Builder - 2022 <br>
+  All rights reserved
+  </div>
+
+
+
+
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.js">
+    </script>
+    <script src="static/js/chart.js"></script>
+
+</body>
+</html>
