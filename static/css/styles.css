@@ -25,9 +25,16 @@ h3 {
 
 a {
     color: #6970D;
+    text-decoration: none! important;
+}
+
+.header a {
+    color: #fff! important;
+    text-decoration: none! important;
 }
 
 a:visited {
+    text-decoration: none! important;
     color: #6970D5;
 }
 
@@ -39,6 +46,26 @@ a:visited {
     padding: 15px;
     text-align: justify;
     clear: both;
+}
+
+.cats {
+    background-color: rgb(39, 39, 39);
+    margin: 0px 1px 10px 1px;
+    border: 0px solid transparent;
+    border-radius: 10px;
+    padding: 15px;
+    text-align: justify;
+    clear: both;
+}
+
+.cats a {
+    color: #6970D;
+    text-decoration: none! important;
+}
+
+.cats:hover {
+    background-color: rgb(255, 255, 255);
+    color: #111;
 }
 
 .budget_input_field {
@@ -108,4 +135,13 @@ a:visited {
     padding: 15px;
     border-top: 3px solid black;
     text-align: center;
+}
+
+
+.item-list{
+    background-color:rgb(39, 39, 39);
+    /* color: #252525; */
+    padding:10px;
+    border-radius: 10px;
+    margin: 8px 0px;
 }

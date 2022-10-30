@@ -1,0 +1,30 @@
+{% extends 'base.html' %}
+
+{% block body %}
+
+<h3>AVAILABLE GPUS</h3>
+{% for item in items %}
+
+<div class="item-list">
+    <table width="100%">
+        <td width="1%">
+            <img src="{{ item.mThumb.url }}" height="50px" width="50px"/>
+        </td>
+        <td width="25%">
+            {{ item.mBrand }} {{ item.mName }}<br>
+            {% if item.isAmdorIntel == 0 %}
+            Chipset: Intel <br>
+            {% else %}
+            Chipset: AMD <br>
+            {% endif %}
+            Price: {{item.mPrice}} BDT
+            
+        </td>
+    </table>
+    
+    </div>
+
+
+{% endfor %}
+
+{% endblock body %}

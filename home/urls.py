@@ -9,4 +9,13 @@ urlpatterns = [
     path('login', views.signin, name = "login"),
     path('reg',views.reg, name='reg'),
     path('signout', views.signout, name="signout"),
+    path('processors',views.pList, name="processors"),
+    path('gpu',views.gList, name="gpu"),
+    path('ram',views.rList, name="ram"),
+    path('ssd',views.sList, name="ssd"),
+    path('hdd',views.hList, name="hdd"),
+    path('mobo',views.mList, name="mobo"),
+    path('mkpc',views.makePC, name="makepc"),
 ]
+# urlpatterns += staticfiles_urlpatterns()
+urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

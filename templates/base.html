@@ -13,7 +13,7 @@
 
 <body>
    
-  <div class="header">COMPREDICT
+  <div class="header"><a href="/">COMPREDICT</a>
      <span style="float:right;padding-right:5px">
 
       {% if  user.is_authenticated %}
@@ -45,8 +45,12 @@
       <div class="par">
         <table width="100%">
           <td width="80%">
-          <input type="text" class="budget_input_field" placeholder="314159"/></td>
-          <td width="15%"><input type="submit" class="budget_submit" value="Build"/></td>
+            <form action="/mkpc">
+             
+          <input type="text" name="user_budget" class="budget_input_field" placeholder="314159"/></td>
+          <td width="15%"><button type="submit" class="budget_submit">Build</button>
+          </form>
+          </td>
         </table>
         
       </div>
@@ -58,17 +62,13 @@
 
 <div class="col grid_3_of_3"> 
   <h3>BROWSE COMPONENTS</h3>
-  <div class="par">Processor</div>  
-  <div class="par">RAM</div>  
-  <div class="par">SSD</div>  
-  <div class="par">HDD</div>  
-  <div class="par">GPU</div>  
-  <div class="par">Motherboard</div>  
-  <div class="par">CPU Cooler</div>    
-  <div class="par">Mouse</div>  
-  <div class="par">Keyboard</div>  
-  <div class="par">Monitor</div>  
-  <div class="par">PSU</div>  
+  <a href="/processors"><div class="cats">Processor</div>  </a>
+  <a href="/ram"><div class="cats">RAM</div>  </a>
+  <a href="/ssd"><div class="cats">SSD</div>  </a>
+  <a href="/hdd"><div class="cats">HDD</div>  </a>
+  <a href="/gpu"><div class="cats">GPU</div>  
+  <a href="/mobo"><div class="cats">Motherboard</div>  </a>
+  
 </div>
 </div>
 

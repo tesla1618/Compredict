@@ -8,12 +8,12 @@
 <div class="item-list">
     <table width="100%">
         <td width="1%">
-            <img src="{{ item.gThumb.url }}" height="50px" width="50px"/>
+            <img src="{{ item.sThumb.url }}" height="50px" width="50px"/>
         </td>
         <td width="25%">
-            {{ item.gBrand }} {{ item.gName }} {{ item.gCap }}GB <br>
-            {% comment %} Cores: {{ item.gCore }}, Threads: {{item.gThread}} <br> {% endcomment %}
-            Price: {{item.gPrice}} BDT
+            {{ item.sBrand }} {{ item.sName }} {{ item.sCap }}GB<br>
+            Interface Type: {{item.sInterface}} <br>
+            Price: {{item.sPrice}} BDT
             
         </td>
     </table>

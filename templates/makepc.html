@@ -1,0 +1,206 @@
+<!doctype html>
+<html>
+<head>
+    
+    <link rel="stylesheet" href="static/css/styles.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"/>
+    <link 
+  href="http://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.3.0/css/font-awesome.css" 
+  rel="stylesheet"  type='text/css'>
+</head>
+
+<body>
+   
+  <div class="header"><a href="/">COMPREDICT</a>
+     <span style="float:right;padding-right:5px">
+
+      {% if  user.is_authenticated %}
+      <a href="/signout">logout</a> ( {{user}} ))
+      {% else %}
+      
+      {% endif %}
+
+    </span></div>
+
+  <div class="section">
+
+    <div class="col grid_1_of_3"> 
+      
+      <h3>WELCOME</h3>
+      <div class="par">
+         Welcome to <b>Compredict</b>.
+         
+         {% if  user.is_authenticated %}
+         {% else %}
+         <a href="/login">Sign in</a> | <a href="/reg">Sign Up</a>
+          
+         {% endif %}
+         or Build your personal computer here and get real time update of all
+        computer components' price!
+      </div>
+  
+      
+    </div>
+<div class="col grid_2_of_3">
+    <h3>BUILD PC</h3>
+    <div class="par">
+      <table width="100%">
+        <td width="80%">
+          <form method="post" action"/login">
+            {% csrf_token %}
+        <input type="text" name="user_budget" class="budget_input_field" value="{{budget}}"/></td>
+        <td width="15%"><button type="submit" class="budget_submit">Build</button>
+        </form>
+        </td>
+      </table>
+      
+    </div>
+
+
+
+    {% if fetchError == True %}
+    
+    <div style = "text-align: center; padding:30px 10px 20px 10px;">Cannot Build PC</div>
+    {% else %}
+
+
+
+
+{% for item in mobo %}
+<div class="item-list">
+    <table width="100%">
+        <td width="1%">
+            <img src="{{ item.mThumb.url }}" height="50px" width="50px"/>
+        </td>
+        <td width="25%">
+            {{ item.mBrand }} {{ item.mName }} <br>
+            {% comment %} Cores: {{ item.gCore }}, Threads: {{item.gThread}} <br> {% endcomment %}
+            Price: {{item.mPrice}} BDT
+            
+        </td>
+    </table>
+    
+    </div>
+{% endfor %}
+
+{% for item in cpu %}
+<div class="item-list">
+    <table width="100%">
+        <td width="1%">
+            <img src="{{ item.pThumb.url }}" height="50px" width="50px"/>
+        </td>
+        <td width="25%">
+            {{ item.pBrand }} {{ item.pName }} <br>
+            Cores: {{ item.pCore }}, Threads: {{item.pThread}} <br>
+            Price: {{item.pPrice}} BDT
+            
+        </td>
+    </table>
+    </div>
+{% endfor %}
+
+
+{% for item in ram %}
+<div class="item-list">
+    <table width="100%">
+        <td width="1%">
+            <img src="{{ item.rThumb.url }}" height="50px" width="50px"/>
+        </td>
+        <td width="25%">
+            {{ item.rBrand }} {{ item.rName }} {{ item.rCap }}GB <br>
+            {% comment %} Cores: {{ item.gCore }}, Threads: {{item.gThread}} <br> {% endcomment %}
+            Price: {{item.rPrice}} BDT
+            
+        </td>
+    </table>
+    
+    </div>
+{% endfor %}
+
+
+{% for item in ssd %}
+
+<div class="item-list">
+    <table width="100%">
+        <td width="1%">
+            <img src="{{ item.sThumb.url }}" height="50px" width="50px"/>
+        </td>
+        <td width="25%">
+            {{ item.sBrand }} {{ item.sName }} {{ item.sCap }}GB<br>
+            Interface Type: {{item.sInterface}} <br>
+            Price: {{item.sPrice}} BDT
+            
+        </td>
+    </table>
+    
+    </div>
+
+
+{% endfor %}
+
+
+
+{% for item in gpu %}
+
+<div class="item-list">
+    <table width="100%">
+        <td width="1%">
+            <img src="{{ item.gThumb.url }}" height="50px" width="50px"/>
+        </td>
+        <td width="25%">
+            {{ item.gBrand }} {{ item.gName }} {{ item.gCap }}GB <br>
+            {% comment %} Cores: {{ item.gCore }}, Threads: {{item.gThread}} <br> {% endcomment %}
+            Price: {{item.gPrice}} BDT
+            
+        </td>
+    </table>
+    
+    </div>
+
+
+{% endfor %}
+
+
+
+
+
+
+
+
+
+{% endif %}
+
+
+
+</div>
+
+<div class="col grid_3_of_3"> 
+  <h3>BROWSE COMPONENTS</h3>
+  <a href="/processors"><div class="cats">Processor</div>  </a>
+  <a href="/ram"><div class="cats">RAM</div>  </a>
+  <a href="/ssd"><div class="cats">SSD</div>  </a>
+  <a href="/hdd"><div class="cats">HDD</div>  </a>
+  <a href="/gpu"><div class="cats">GPU</div>  
+  <a href="/mobo"><div class="cats">Motherboard</div>  </a>
+  
+</div>
+</div>
+
+
+  <div class="footer">
+  Computer Builder - 2022 <br>
+  All rights reserved
+  </div>
+
+
+
+
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.js">
+    </script>
+    <script src="static/js/chart.js"></script>
+
+</body>
+</html>
