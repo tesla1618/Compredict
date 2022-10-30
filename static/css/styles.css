@@ -18,6 +18,19 @@ body {
     width: 100%;
 }
 
+
+h3 {
+    margin-left: 10px;
+}
+
+a {
+    color: #6970D;
+}
+
+a:visited {
+    color: #6970D5;
+}
+
 .par {
     background-color: rgb(39, 39, 39);
     margin: 0px 1px 10px 1px;

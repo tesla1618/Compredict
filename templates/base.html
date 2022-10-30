@@ -13,19 +13,36 @@
 
 <body>
    
-  <div class="header">COMPREDICT</div>
+  <div class="header">COMPREDICT
+     <span style="float:right;padding-right:5px">
+
+      {% if  user.is_authenticated %}
+      <a href="/signout">logout</a> ( {{user}} ))
+      {% else %}
+      
+      {% endif %}
+
+    </span></div>
 
   <div class="section">
 
     <div class="col grid_1_of_3"> 
       
+      <h3>WELCOME</h3>
       <div class="par">
-        <h3>WELCOME</h3> to <b>Compredict</b>. Build your personal computer here and get real time update of all
+         Welcome to <b>Compredict</b>.
+         
+         {% if  user.is_authenticated %}
+         {% else %}
+         <a href="/login">Sign in</a> | <a href="/reg">Sign Up</a>
+          
+         {% endif %}
+         or Build your personal computer here and get real time update of all
         computer components' price!
       </div>
   
+      <h3>WHAT'S YOUR BUDGET?</h3>
       <div class="par">
-        <h3>WHAT'S YOUR BUDGET?</h3>
         <table width="100%">
           <td width="80%">
           <input type="text" class="budget_input_field" placeholder="314159"/></td>
@@ -34,9 +51,10 @@
         
       </div>
     </div>
-
+<div class="col grid_2_of_3">
 {% block body %}
 {% endblock body %}
+</div>
 
 <div class="col grid_3_of_3"> 
   <h3>BROWSE COMPONENTS</h3>

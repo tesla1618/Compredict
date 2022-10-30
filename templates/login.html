@@ -1,0 +1,28 @@
+{% extends 'base.html' %}
+
+{% block body %}
+
+<style>
+    .t {
+        border: 1px solid #333333;
+        padding: 7px;
+        border-radius: 7px;
+        margin: 3px 0px 3px 3px;
+    }
+    .s {
+        
+        margin: 8px 0px 3px 3px;
+    }
+</style>
+
+
+<h3>EXISTING USER SIGN IN</h3>
+<div class="par">
+<form method="post" action"/login">
+    {% csrf_token %}
+<input type="text" placeholder="User ID" name="loginName" id="loginName" class="t"/><br>
+<input type="password" id="loginPassword" name="loginPassword" type="password" class="t" placeholder="Password"/><br>
+<button class="budget_submit s" type="submit">Login</button>
+</div>
+
+{% endblock body %}

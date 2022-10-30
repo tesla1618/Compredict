@@ -1,0 +1,31 @@
+{% extends 'base.html' %}
+
+{% block body %}
+
+<style>
+    .t {
+        border: 1px solid #333333;
+        padding: 7px;
+        border-radius: 7px;
+        margin: 3px 0px 3px 3px;
+    }
+    .s {
+        
+        margin: 8px 0px 3px 3px;
+    }
+</style>
+
+
+<h3>NEW USER SIGN UP</h3>
+<div class="par">
+    <form class="px-md-2" action="/reg" method="post">
+        {% csrf_token %}
+<input type="text" class="t" placeholder="Username" name="regName" id="regName" aria-label="Username" aria-describedby="basic-addon1" required/><br>
+<input type="password" id="regPassword1" name="regPassword1" type="password" class="t" placeholder="Password" required/><br>
+<input type="password" id="regPassword2" name="regPassword2" type="password" class="t" placeholder="Retype Password" required/><br>
+<input type="email" class="t" placeholder="Valid e-mail" name="regMail" id="regMail" aria-label="Email" aria-describedby="basic-addon1" required><br>
+<button type="Submit" class="budget_submit s">Sign Up</button>
+    </form>
+</div>
+
+{% endblock body %}
